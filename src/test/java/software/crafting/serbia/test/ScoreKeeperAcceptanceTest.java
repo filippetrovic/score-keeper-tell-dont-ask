@@ -1,5 +1,6 @@
 package software.crafting.serbia.test;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,10 +18,14 @@ public class ScoreKeeperAcceptanceTest {
   @Mock
   private Scoreboard scoreboard;
 
-  private ScoreKeeper scoreKeeper = new ScoreKeeperImpl(scoreboard);
+  private ScoreKeeper scoreKeeper;
+
+  @Before
+  public void setUp() {
+    scoreKeeper = new ScoreKeeperImpl(scoreboard);
+  }
 
   @Test
-  @Ignore("In progress")
   public void shouldDisplay001vs000WhenHomeTeamScoresAPoint() {
     // Given
 
@@ -29,6 +34,20 @@ public class ScoreKeeperAcceptanceTest {
 
     // Then
     verify(scoreboard).display("001:000");
+  }
+
+  @Test
+  @Ignore("In progress")
+  public void shouldDisplay002vs003WhenHomeTeamScoresAPoint() {
+    // Given
+
+    // When
+    scoreKeeper.scoreTeamB1();
+    scoreKeeper.scoreTeamA2();
+    scoreKeeper.scoreTeamB2();
+
+    // Then
+    verify(scoreboard).display("002:003");
   }
 
 }
