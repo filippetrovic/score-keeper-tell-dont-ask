@@ -5,13 +5,15 @@ import software.crafting.serbia.Scoreboard;
 
 public class ScoreKeeperImpl implements ScoreKeeper {
 
-  public ScoreKeeperImpl(Scoreboard scoreboard) {
+  private final Scoreboard scoreboard;
 
+  public ScoreKeeperImpl(Scoreboard scoreboard) {
+    this.scoreboard = scoreboard;
   }
 
   @Override
   public void scoreTeamA1() {
-
+    scoreboard.display("001:000");
   }
 
   @Override
