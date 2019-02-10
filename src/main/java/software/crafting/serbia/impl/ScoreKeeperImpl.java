@@ -7,6 +7,7 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   private final Scoreboard scoreboard;
   private int teamAScore;
+  private int teamBScore;
 
   public ScoreKeeperImpl(Scoreboard scoreboard) {
     this.scoreboard = scoreboard;
@@ -20,7 +21,8 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public void scoreTeamB1() {
-    scoreboard.display("00" + teamAScore + ":001");
+    teamBScore += 1;
+    scoreboard.display("00" + teamAScore + ":00" + teamBScore);
   }
 
   @Override
