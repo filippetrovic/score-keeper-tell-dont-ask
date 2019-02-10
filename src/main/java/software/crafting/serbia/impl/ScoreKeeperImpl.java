@@ -16,7 +16,7 @@ public class ScoreKeeperImpl implements ScoreKeeper {
   @Override
   public void scoreTeamA1() {
     teamAScore += 1;
-    scoreboard.display("00" + teamAScore + ":000");
+    scoreboard.display("00" + teamAScore + ":00" + teamBScore);
   }
 
   @Override
