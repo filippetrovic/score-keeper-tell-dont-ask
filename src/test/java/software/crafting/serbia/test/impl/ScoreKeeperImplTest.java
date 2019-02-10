@@ -59,4 +59,16 @@ public class ScoreKeeperImplTest {
     inOrder.verify(scoreboard).display("001:000");
     inOrder.verify(scoreboard).display("001:001");
   }
+
+  @Test
+  public void twoPointsForHomeTeam() {
+    // Given
+
+    // When
+    scoreKeeper.scoreTeamA2();
+
+    // Then
+    verify(scoreboard).display("002:000");
+
+  }
 }
