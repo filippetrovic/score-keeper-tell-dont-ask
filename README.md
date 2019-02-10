@@ -10,6 +10,7 @@ We need software to deliver the proper data to the scoreboard for a basketball t
 ## Your task
 
 Write a class `ScoreKeeper` which offers following methods:
+
 ```
 void scoreTeamA1()
 void scoreTeamA2()
@@ -17,9 +18,17 @@ void scoreTeamA3()
 void scoreTeamB1()
 void scoreTeamB2()
 void scoreTeamB3()
-String getScore()
+void printScore(Scoreboard scoreboard)
+```
+
+`Scoreboard` is interface with a method for displaying result:
+   
+```
+interface Scoreboard {
+  void display(String score);
+}
 ```
 
 ## Rules
 
-The returned String always has seven characters. An example would be `000:000`
+Result, shown on scoreboard, should always has seven characters. An example would be `000:000`
