@@ -18,10 +18,11 @@ void scoreTeamA3()
 void scoreTeamB1()
 void scoreTeamB2()
 void scoreTeamB3()
-void printScore(Scoreboard scoreboard)
 ```
 
-`Scoreboard` is interface with a method for displaying result:
+After every score change scoreboard should be immediately updated. 
+Score board is represented with interface `Scoreboard`
+which has a method for displaying score:
    
 ```
 interface Scoreboard {
@@ -31,4 +32,4 @@ interface Scoreboard {
 
 ## Rules
 
-Result, shown on scoreboard, should always has seven characters. An example would be `000:000`
+Score, shown on scoreboard, should always has seven characters. An example would be `000:000`
