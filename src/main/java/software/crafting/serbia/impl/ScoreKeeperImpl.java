@@ -15,20 +15,20 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public void scoreTeamA1() {
-    teamAScore += 1;
-    scoreboard.display("00" + teamAScore + ":00" + teamBScore);
+    teamAScores(1);
+    display();
   }
 
   @Override
   public void scoreTeamB1() {
-    teamBScore += 1;
-    scoreboard.display("00" + teamAScore + ":00" + teamBScore);
+    teamBScores(1);
+    display();
   }
 
   @Override
   public void scoreTeamA2() {
-    teamAScore += 2;
-    scoreboard.display("00" + teamAScore + ":00" + teamBScore);
+    teamAScores(2);
+    display();
   }
 
   @Override
@@ -45,4 +45,17 @@ public class ScoreKeeperImpl implements ScoreKeeper {
   public void scoreTeamB3() {
 
   }
+
+  private void teamBScores(int points) {
+    teamBScore += points;
+  }
+
+  private void teamAScores(int points) {
+    teamAScore += points;
+  }
+
+  private void display() {
+    scoreboard.display("00" + teamAScore + ":00" + teamBScore);
+  }
+
 }
