@@ -11,6 +11,7 @@ public class FormattedScoreboard {
   }
 
   public void display(int teamAScore, int teamBScore) {
-    scoreboard.display("00" + teamAScore + ":00" + teamBScore);
+    final String formatted = String.format("%03d:%03d", teamAScore, teamBScore);
+    scoreboard.display(formatted);
   }
 }
