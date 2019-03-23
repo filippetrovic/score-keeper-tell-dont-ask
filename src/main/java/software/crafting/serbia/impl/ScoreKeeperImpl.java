@@ -14,37 +14,37 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public void scoreTeamA1() {
-    ongoingMatch.scoreTeamA(1);
+    ongoingMatch.score(Team.HOME, 1);
     ongoingMatch.visit(formattedScoreboard);
   }
 
   @Override
   public void scoreTeamB1() {
-    ongoingMatch.scoreTeamB(1);
+    ongoingMatch.score(Team.AWAY, 1);
     ongoingMatch.visit(formattedScoreboard);
   }
 
   @Override
   public void scoreTeamA2() {
-    ongoingMatch.scoreTeamA(2);
+    ongoingMatch.score(Team.HOME, 2);
     ongoingMatch.visit(formattedScoreboard);
   }
 
   @Override
   public void scoreTeamB2() {
-    ongoingMatch.scoreTeamB(2);
+    ongoingMatch.score(Team.AWAY, 2);
     ongoingMatch.visit(formattedScoreboard);
   }
 
   @Override
   public void scoreTeamA3() {
-    ongoingMatch.scoreTeamA(3);
+    ongoingMatch.score(Team.HOME, 3);
     ongoingMatch.visit(formattedScoreboard);
   }
 
   @Override
   public void scoreTeamB3() {
-    ongoingMatch.scoreTeamB(3);
+    ongoingMatch.score(Team.AWAY, 3);
     ongoingMatch.visit(formattedScoreboard);
   }
 
