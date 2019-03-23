@@ -1,40 +1,40 @@
 package software.crafting.serbia.impl;
 
 import software.crafting.serbia.ScoreKeeper;
-import software.crafting.serbia.Scoreboard;
 
 public class ScoreKeeperImpl implements ScoreKeeper {
 
-  private final Scoreboard scoreboard;
+  private final FormattedScoreboard formattedScoreboard;
+
   private int teamAScore;
   private int teamBScore;
 
-  public ScoreKeeperImpl(Scoreboard scoreboard) {
-    this.scoreboard = scoreboard;
+  public ScoreKeeperImpl(FormattedScoreboard formattedScoreboard) {
+    this.formattedScoreboard = formattedScoreboard;
   }
 
   @Override
   public void scoreTeamA1() {
     teamAScores(1);
-    display();
+    formattedScoreboard.display(teamAScore, teamBScore);
   }
 
   @Override
   public void scoreTeamB1() {
     teamBScores(1);
-    display();
+    formattedScoreboard.display(teamAScore, teamBScore);
   }
 
   @Override
   public void scoreTeamA2() {
     teamAScores(2);
-    display();
+    formattedScoreboard.display(teamAScore, teamBScore);
   }
 
   @Override
   public void scoreTeamB2() {
     teamBScores(2);
-    display();
+    formattedScoreboard.display(teamAScore, teamBScore);
   }
 
   @Override
@@ -53,10 +53,6 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   private void teamAScores(int points) {
     teamAScore += points;
-  }
-
-  private void display() {
-    scoreboard.display("00" + teamAScore + ":00" + teamBScore);
   }
 
 }

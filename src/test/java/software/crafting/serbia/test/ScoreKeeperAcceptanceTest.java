@@ -7,6 +7,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import software.crafting.serbia.ScoreKeeper;
 import software.crafting.serbia.Scoreboard;
+import software.crafting.serbia.impl.FormattedScoreboard;
 import software.crafting.serbia.impl.ScoreKeeperImpl;
 
 import static org.mockito.Mockito.verify;
@@ -21,7 +22,7 @@ public class ScoreKeeperAcceptanceTest {
 
   @Before
   public void setUp() {
-    scoreKeeper = new ScoreKeeperImpl(scoreboard);
+    scoreKeeper = new ScoreKeeperImpl(new FormattedScoreboard(scoreboard));
   }
 
   @Test

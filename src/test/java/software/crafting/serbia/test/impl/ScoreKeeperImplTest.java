@@ -6,7 +6,7 @@ import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import software.crafting.serbia.Scoreboard;
+import software.crafting.serbia.impl.FormattedScoreboard;
 import software.crafting.serbia.impl.ScoreKeeperImpl;
 
 import static org.mockito.Mockito.inOrder;
@@ -16,7 +16,7 @@ import static org.mockito.Mockito.verify;
 public class ScoreKeeperImplTest {
 
   @Mock
-  private Scoreboard scoreboard;
+  private FormattedScoreboard scoreboard;
 
   @InjectMocks
   private ScoreKeeperImpl scoreKeeper;
@@ -29,7 +29,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamA1();
 
     // Then
-    verify(scoreboard).display("001:000");
+    verify(scoreboard).display(1, 0);
   }
 
   @Test
@@ -42,8 +42,8 @@ public class ScoreKeeperImplTest {
 
     // Then
     InOrder inOrder = inOrder(scoreboard);
-    inOrder.verify(scoreboard).display("001:000");
-    inOrder.verify(scoreboard).display("002:000");
+    inOrder.verify(scoreboard).display(1, 0);
+    inOrder.verify(scoreboard).display(2, 0);
   }
 
   @Test
@@ -56,8 +56,8 @@ public class ScoreKeeperImplTest {
 
     // Then
     InOrder inOrder = inOrder(scoreboard);
-    inOrder.verify(scoreboard).display("001:000");
-    inOrder.verify(scoreboard).display("001:001");
+    inOrder.verify(scoreboard).display(1, 0);
+    inOrder.verify(scoreboard).display(1, 1);
   }
 
   @Test
@@ -68,7 +68,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamA2();
 
     // Then
-    verify(scoreboard).display("002:000");
+    verify(scoreboard).display(2, 0);
 
   }
 
@@ -80,7 +80,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamB2();
 
     // Then
-    verify(scoreboard).display("000:002");
+    verify(scoreboard).display(0, 2);
 
   }
 }
