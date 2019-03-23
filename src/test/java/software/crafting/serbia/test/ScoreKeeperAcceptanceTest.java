@@ -1,7 +1,6 @@
 package software.crafting.serbia.test;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -37,7 +36,6 @@ public class ScoreKeeperAcceptanceTest {
   }
 
   @Test
-  @Ignore("In progress")
   public void shouldDisplay002vs003WhenHomeTeamScoresAPoint() {
     // Given
 

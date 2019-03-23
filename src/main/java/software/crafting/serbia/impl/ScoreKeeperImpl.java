@@ -33,7 +33,8 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public void scoreTeamB2() {
-
+    teamBScores(2);
+    display();
   }
 
   @Override
