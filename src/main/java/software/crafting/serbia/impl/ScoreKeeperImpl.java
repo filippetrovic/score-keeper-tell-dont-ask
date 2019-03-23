@@ -4,11 +4,11 @@ import software.crafting.serbia.ScoreKeeper;
 
 public class ScoreKeeperImpl implements ScoreKeeper {
 
-  private final FormattedScoreboard formattedScoreboard;
+  private final ScoreVisitor formattedScoreboard;
 
   private final Match ongoingMatch = new Match();
 
-  public ScoreKeeperImpl(FormattedScoreboard formattedScoreboard) {
+  public ScoreKeeperImpl(ScoreVisitor formattedScoreboard) {
     this.formattedScoreboard = formattedScoreboard;
   }
 

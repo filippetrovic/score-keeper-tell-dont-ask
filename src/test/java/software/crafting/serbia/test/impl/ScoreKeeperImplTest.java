@@ -6,8 +6,8 @@ import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import software.crafting.serbia.impl.FormattedScoreboard;
 import software.crafting.serbia.impl.ScoreKeeperImpl;
+import software.crafting.serbia.impl.ScoreVisitor;
 
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.verify;
@@ -16,7 +16,7 @@ import static org.mockito.Mockito.verify;
 public class ScoreKeeperImplTest {
 
   @Mock
-  private FormattedScoreboard scoreboard;
+  private ScoreVisitor scoreboard;
 
   @InjectMocks
   private ScoreKeeperImpl scoreKeeper;
