@@ -58,4 +58,17 @@ public class FormattedScoreboardTest {
 
   }
 
+  @Test
+  public void shouldDisplay101vs112() {
+    // Given
+
+    // When
+    formattedScoreboard.display(101, 112);
+
+    // Then
+    verify(scoreboard)
+        .display("101:112");
+
+  }
+
 }
