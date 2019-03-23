@@ -2,8 +2,8 @@ package software.crafting.serbia.impl;
 
 public class Match {
 
-  public int teamA;
-  public int teamB;
+  private int teamA;
+  private int teamB;
 
   public void score(Team team, int points) {
     if (team == Team.HOME) {
