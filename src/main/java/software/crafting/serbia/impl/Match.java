@@ -12,4 +12,8 @@ public class Match {
   public void scoreTeamB(int points) {
     this.teamB += points;
   }
+
+  public void visit(ScoreVisitor scoreVisitor) {
+    scoreVisitor.process(this.teamA, this.teamB);
+  }
 }

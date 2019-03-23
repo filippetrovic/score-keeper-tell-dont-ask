@@ -29,7 +29,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamA1();
 
     // Then
-    verify(scoreboard).display(1, 0);
+    verify(scoreboard).process(1, 0);
   }
 
   @Test
@@ -42,8 +42,8 @@ public class ScoreKeeperImplTest {
 
     // Then
     InOrder inOrder = inOrder(scoreboard);
-    inOrder.verify(scoreboard).display(1, 0);
-    inOrder.verify(scoreboard).display(2, 0);
+    inOrder.verify(scoreboard).process(1, 0);
+    inOrder.verify(scoreboard).process(2, 0);
   }
 
   @Test
@@ -56,8 +56,8 @@ public class ScoreKeeperImplTest {
 
     // Then
     InOrder inOrder = inOrder(scoreboard);
-    inOrder.verify(scoreboard).display(1, 0);
-    inOrder.verify(scoreboard).display(1, 1);
+    inOrder.verify(scoreboard).process(1, 0);
+    inOrder.verify(scoreboard).process(1, 1);
   }
 
   @Test
@@ -68,7 +68,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamA2();
 
     // Then
-    verify(scoreboard).display(2, 0);
+    verify(scoreboard).process(2, 0);
 
   }
 
@@ -80,7 +80,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamB2();
 
     // Then
-    verify(scoreboard).display(0, 2);
+    verify(scoreboard).process(0, 2);
 
   }
 
@@ -92,7 +92,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamA3();
 
     // Then
-    verify(scoreboard).display(3, 0);
+    verify(scoreboard).process(3, 0);
 
   }
 
@@ -104,7 +104,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamB3();
 
     // Then
-    verify(scoreboard).display(0, 3);
+    verify(scoreboard).process(0, 3);
 
   }
 }
