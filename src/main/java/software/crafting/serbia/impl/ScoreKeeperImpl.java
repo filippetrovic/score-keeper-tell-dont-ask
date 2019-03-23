@@ -6,8 +6,7 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   private final FormattedScoreboard formattedScoreboard;
 
-  private int teamAScore;
-  private int teamBScore;
+  private final Match ongoingMatch = new Match();
 
   public ScoreKeeperImpl(FormattedScoreboard formattedScoreboard) {
     this.formattedScoreboard = formattedScoreboard;
@@ -15,46 +14,38 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public void scoreTeamA1() {
-    teamAScores(1);
-    formattedScoreboard.display(teamAScore, teamBScore);
+    ongoingMatch.scoreTeamA(1);
+    formattedScoreboard.display(ongoingMatch.teamA, ongoingMatch.teamB);
   }
 
   @Override
   public void scoreTeamB1() {
-    teamBScores(1);
-    formattedScoreboard.display(teamAScore, teamBScore);
+    ongoingMatch.scoreTeamB(1);
+    formattedScoreboard.display(ongoingMatch.teamA, ongoingMatch.teamB);
   }
 
   @Override
   public void scoreTeamA2() {
-    teamAScores(2);
-    formattedScoreboard.display(teamAScore, teamBScore);
+    ongoingMatch.scoreTeamA(2);
+    formattedScoreboard.display(ongoingMatch.teamA, ongoingMatch.teamB);
   }
 
   @Override
   public void scoreTeamB2() {
-    teamBScores(2);
-    formattedScoreboard.display(teamAScore, teamBScore);
+    ongoingMatch.scoreTeamB(2);
+    formattedScoreboard.display(ongoingMatch.teamA, ongoingMatch.teamB);
   }
 
   @Override
   public void scoreTeamA3() {
-    teamAScores(3);
-    formattedScoreboard.display(teamAScore, teamBScore);
+    ongoingMatch.scoreTeamA(3);
+    formattedScoreboard.display(ongoingMatch.teamA, ongoingMatch.teamB);
   }
 
   @Override
   public void scoreTeamB3() {
-    teamBScores(3);
-    formattedScoreboard.display(teamAScore, teamBScore);
-  }
-
-  private void teamBScores(int points) {
-    teamBScore += points;
-  }
-
-  private void teamAScores(int points) {
-    teamAScore += points;
+    ongoingMatch.scoreTeamB(3);
+    formattedScoreboard.display(ongoingMatch.teamA, ongoingMatch.teamB);
   }
 
 }
