@@ -14,6 +14,6 @@ public class Match {
   }
 
   public void visit(ScoreVisitor scoreVisitor) {
-    scoreVisitor.process(this.teamA, this.teamB);
+    scoreVisitor.onVisit(this.teamA, this.teamB);
   }
 }

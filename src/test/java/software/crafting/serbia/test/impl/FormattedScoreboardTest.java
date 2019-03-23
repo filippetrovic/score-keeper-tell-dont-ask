@@ -24,7 +24,7 @@ public class FormattedScoreboardTest {
     // Given
 
     // When
-    formattedScoreboard.process(0, 0);
+    formattedScoreboard.onVisit(0, 0);
 
     // Then
     verify(scoreboard)
@@ -37,7 +37,7 @@ public class FormattedScoreboardTest {
     // Given
 
     // When
-    formattedScoreboard.process(1, 2);
+    formattedScoreboard.onVisit(1, 2);
 
     // Then
     verify(scoreboard)
@@ -50,7 +50,7 @@ public class FormattedScoreboardTest {
     // Given
 
     // When
-    formattedScoreboard.process(10, 12);
+    formattedScoreboard.onVisit(10, 12);
 
     // Then
     verify(scoreboard)
@@ -63,7 +63,7 @@ public class FormattedScoreboardTest {
     // Given
 
     // When
-    formattedScoreboard.process(101, 112);
+    formattedScoreboard.onVisit(101, 112);
 
     // Then
     verify(scoreboard)

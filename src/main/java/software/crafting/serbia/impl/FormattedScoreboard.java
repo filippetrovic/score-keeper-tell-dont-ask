@@ -10,7 +10,7 @@ public class FormattedScoreboard implements ScoreVisitor {
     this.scoreboard = scoreboard;
   }
 
-  public void process(int teamAScore, int teamBScore) {
+  public void onVisit(int teamAScore, int teamBScore) {
     final String formatted = String.format("%03d:%03d", teamAScore, teamBScore);
     scoreboard.display(formatted);
   }
