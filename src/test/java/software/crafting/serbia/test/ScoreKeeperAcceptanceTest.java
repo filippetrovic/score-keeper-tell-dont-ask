@@ -7,8 +7,8 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import software.crafting.serbia.ScoreKeeper;
 import software.crafting.serbia.Scoreboard;
-import software.crafting.serbia.impl.FormattedScoreboard;
-import software.crafting.serbia.impl.ScoreKeeperImpl;
+import software.crafting.serbia.impl.output.FormattedScoreboard;
+import software.crafting.serbia.impl.score.ScoreKeeperImpl;
 
 import static org.mockito.Mockito.verify;
 

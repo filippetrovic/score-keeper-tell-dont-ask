@@ -6,8 +6,8 @@ import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import software.crafting.serbia.impl.ScoreKeeperImpl;
-import software.crafting.serbia.impl.ScoreVisitor;
+import software.crafting.serbia.impl.score.ScoreKeeperImpl;
+import software.crafting.serbia.impl.score.ScoreListener;
 
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.verify;
@@ -16,7 +16,7 @@ import static org.mockito.Mockito.verify;
 public class ScoreKeeperImplTest {
 
   @Mock
-  private ScoreVisitor scoreboard;
+  private ScoreListener scoreboard;
 
   @InjectMocks
   private ScoreKeeperImpl scoreKeeper;
@@ -29,7 +29,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamA1();
 
     // Then
-    verify(scoreboard).onVisit(1, 0);
+    verify(scoreboard).onScoreChanged(1, 0);
   }
 
   @Test
@@ -42,8 +42,8 @@ public class ScoreKeeperImplTest {
 
     // Then
     InOrder inOrder = inOrder(scoreboard);
-    inOrder.verify(scoreboard).onVisit(1, 0);
-    inOrder.verify(scoreboard).onVisit(2, 0);
+    inOrder.verify(scoreboard).onScoreChanged(1, 0);
+    inOrder.verify(scoreboard).onScoreChanged(2, 0);
   }
 
   @Test
@@ -56,8 +56,8 @@ public class ScoreKeeperImplTest {
 
     // Then
     InOrder inOrder = inOrder(scoreboard);
-    inOrder.verify(scoreboard).onVisit(1, 0);
-    inOrder.verify(scoreboard).onVisit(1, 1);
+    inOrder.verify(scoreboard).onScoreChanged(1, 0);
+    inOrder.verify(scoreboard).onScoreChanged(1, 1);
   }
 
   @Test
@@ -68,7 +68,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamA2();
 
     // Then
-    verify(scoreboard).onVisit(2, 0);
+    verify(scoreboard).onScoreChanged(2, 0);
 
   }
 
@@ -80,7 +80,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamB2();
 
     // Then
-    verify(scoreboard).onVisit(0, 2);
+    verify(scoreboard).onScoreChanged(0, 2);
 
   }
 
@@ -92,7 +92,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamA3();
 
     // Then
-    verify(scoreboard).onVisit(3, 0);
+    verify(scoreboard).onScoreChanged(3, 0);
 
   }
 
@@ -104,7 +104,7 @@ public class ScoreKeeperImplTest {
     scoreKeeper.scoreTeamB3();
 
     // Then
-    verify(scoreboard).onVisit(0, 3);
+    verify(scoreboard).onScoreChanged(0, 3);
 
   }
 }

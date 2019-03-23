@@ -6,7 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import software.crafting.serbia.Scoreboard;
-import software.crafting.serbia.impl.FormattedScoreboard;
+import software.crafting.serbia.impl.output.FormattedScoreboard;
 
 import static org.mockito.Mockito.verify;
 
@@ -24,7 +24,7 @@ public class FormattedScoreboardTest {
     // Given
 
     // When
-    formattedScoreboard.onVisit(0, 0);
+    formattedScoreboard.onScoreChanged(0, 0);
 
     // Then
     verify(scoreboard)
@@ -37,7 +37,7 @@ public class FormattedScoreboardTest {
     // Given
 
     // When
-    formattedScoreboard.onVisit(1, 2);
+    formattedScoreboard.onScoreChanged(1, 2);
 
     // Then
     verify(scoreboard)
@@ -50,7 +50,7 @@ public class FormattedScoreboardTest {
     // Given
 
     // When
-    formattedScoreboard.onVisit(10, 12);
+    formattedScoreboard.onScoreChanged(10, 12);
 
     // Then
     verify(scoreboard)
@@ -63,7 +63,7 @@ public class FormattedScoreboardTest {
     // Given
 
     // When
-    formattedScoreboard.onVisit(101, 112);
+    formattedScoreboard.onScoreChanged(101, 112);
 
     // Then
     verify(scoreboard)
