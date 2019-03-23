@@ -39,12 +39,14 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public void scoreTeamA3() {
-
+    teamAScores(3);
+    formattedScoreboard.display(teamAScore, teamBScore);
   }
 
   @Override
   public void scoreTeamB3() {
-
+    teamBScores(3);
+    formattedScoreboard.display(teamAScore, teamBScore);
   }
 
   private void teamBScores(int points) {

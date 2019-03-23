@@ -83,4 +83,28 @@ public class ScoreKeeperImplTest {
     verify(scoreboard).display(0, 2);
 
   }
+
+  @Test
+  public void threePointsForHomeTeam() {
+    // Given
+
+    // When
+    scoreKeeper.scoreTeamA3();
+
+    // Then
+    verify(scoreboard).display(3, 0);
+
+  }
+
+  @Test
+  public void threePointsForAwayTeam() {
+    // Given
+
+    // When
+    scoreKeeper.scoreTeamB3();
+
+    // Then
+    verify(scoreboard).display(0, 3);
+
+  }
 }
